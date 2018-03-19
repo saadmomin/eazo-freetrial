@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="color-1">
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Details Form</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h4>Apple iPhone 7 128Gb | Pristine Condition</h4>
+  <ion-row class="price-row">
+    <ion-col col-6 offset-1>
+      <h3>Price</h3>
+    </ion-col>
+    <ion-col col-5>
+      <h3>&#x20b9; 59,000</h3>
+    </ion-col>
+  </ion-row>
+
+
+  <h4>Schedule Delivery</h4>
+  <ion-list class="delivery-list" radio-group [(ngModel)]="deliveryOption">
+    <ion-item>
+      <ion-label>Any Time</ion-label>
+      <ion-radio value="any" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Weekend Only</ion-label>
+      <ion-radio value="weekend"></ion-radio>
+    </ion-item>
+    <ion-item >
+      <ion-label item-left>Custom</ion-label>
+      <ion-radio (click)="picker.open()" value="custom"></ion-radio>
+      <ion-datetime id="custom-date" #picker displayFormat="DD MMM, YYYY" pickerFormat="DD MMM, YYYY" [(ngModel)]="event.timeStarts"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <h4>Trial Period</h4>
+  <ion-list no-lines class="trialPeriod-list">
+    <ion-item>
+      <ion-label>Days to Try:</ion-label>
+      <ion-select [(ngModel)]="daysToTry" interface="popover" (ionChange)="totalAmountChange()">
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label item-left>Deposit per day</ion-label>
+      <ion-label item-right id="deposit-amount">{{depositPerDay}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label item-left>Total Amount</ion-label>
+      <ion-label item-right id="total-amount">{{totalAmount}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <button ion-button full color="color-1" (click)="continue()">Next</button>
+</ion-footer>

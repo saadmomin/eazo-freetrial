@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="color-1">
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="isFacebookLoggedIn == false">
+      {{currentUser?.userdata.givenName}}
+      
+    </ion-title>
+    <ion-title *ngIf="isFacebookLoggedIn == true">
+      {{currentUser?.userdata.first_name}}'s Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  
+  <ion-row class="profile-img">
+    <ion-col>
+      <img *ngIf="isFacebookLoggedIn" [src]="currentUser?.userdata.picture">
+      <img *ngIf="!isFacebookLoggedIn" [src]="currentUser?.userdata.imageUrl">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="details-row">
+    <ion-col col-4 offset-1>Name</ion-col>
+    <ion-col col-7 *ngIf="isFacebookLoggedIn">{{currentUser?.userdata.username}}</ion-col>
+    <ion-col col-7 *ngIf="!isFacebookLoggedIn">{{currentUser?.userdata.displayName}}</ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-4 offset-1>Email</ion-col>
+    <ion-col col-7>{{currentUser?.userdata.email}}</ion-col>
+  </ion-row>
+
+  
+</ion-content>

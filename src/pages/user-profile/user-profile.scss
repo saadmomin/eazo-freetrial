@@ -1,0 +1,18 @@
+page-user-profile {
+    .profile-img {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        ion-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            width: 60%;
+            height: auto;
+        }
+    }
+    .details-row {
+        margin-top: 20px;
+    }
+}

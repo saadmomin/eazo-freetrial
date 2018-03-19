@@ -1,0 +1,64 @@
+page-history {
+    
+    #product-name-heading {
+        overflow: hidden;
+        h4 {
+            font-size: 13px !important;
+        }
+    }
+
+    #date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-size: 11px !important;
+        }
+    }
+
+    .all-rows{
+        display: flex !important;
+        align-items: center !important;
+        padding: 2px !important;
+    }
+
+    #order-status-heading {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-weight: 600;
+        color: green;
+        h4 {
+        font-size: 13px !important;
+    }
+    }
+    #second-row {
+        margin-left: 5px;
+        ion-col {
+            padding: 2px !important;
+            height: 12px;
+            p {
+                font-size: 10px !important;
+            }
+        }
+    }
+
+    #third-row {
+        margin-left: 5px;
+        margin-right: 5px;
+        ion-col {
+            padding: 2px !important;
+            height: 18px;
+            p {
+                font-size: 10px !important;
+                
+            }
+        }
+    }
+
+   
+
+    
+
+    
+}

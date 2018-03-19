@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="color-1">
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Eazo Free Trial
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+      <h4>Apple iPhone 7 128Gb | Pristine Condition</h4>
+  <ion-card>
+    <ion-slides autoplay="2000" loop="true">
+      <ion-slide *ngFor="let number of [1,2,3,4]">
+        <img src="./assets/imgs/iphone-{{number}}.png" />
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+  <ion-row class="price-row">
+    <ion-col col-6 offset-1>
+      <h3>Price</h3>
+    </ion-col>
+    <ion-col col-5>
+      <h3>&#x20b9; 59,000</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row class="seller-row">
+    <ion-col col-3 class="seller">
+      <p>Seller:</p>
+    </ion-col>
+    <ion-col col-9 class="seller-details">
+        <ion-icon item-left name="contact"></ion-icon>
+        <p>Saad Momin (Active since 4 months)</p>
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding>
+    <ion-col class="ad-details">
+        <h4>Product Description</h4>
+        <p>This is the Apple iPhone. The most expensive phone in the world. Kharid lo please!! This is the Apple iPhone. The most expensive phone in the world. Kharid lo please!! This is the Apple iPhone. The most expensive phone in the world. Kharid lo please!!This is the Apple iPhone. The most expensive phone in the world. Kharid lo please!!This is the Apple iPhone. The most expensive phone in the world. Kharid lo please!!This is the Apple iPhone. The most expensive phone in the world.</p>
+    </ion-col>
+  </ion-row>
+
+
+  
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button full color="color-1" (click)="continue()">Next</button>
+</ion-footer>

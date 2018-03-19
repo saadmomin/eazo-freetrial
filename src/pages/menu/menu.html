@@ -1,0 +1,19 @@
+<ion-menu [content]="content">
+  <ion-header>
+    
+    <ion-toolbar color="color-1">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div id="frost-div"></div>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.text}}</button>
+      <button menuClose ion-item (click)="shareviaWhatsApp()">Share</button>
+      <button menuClose ion-item (click)="logout()">Logout</button>
+    </ion-list>
+  </ion-content>
+  </ion-menu>
+
+  <ion-nav #content [root]="pages[0].Component" swipeBackEnabled="false"></ion-nav>

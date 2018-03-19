@@ -1,0 +1,86 @@
+page-details-form {
+    ion-content {
+        background-color: #FFFFFF !important; 
+        margin: 0px !important; 
+        padding: 0px !important;
+    }
+
+    h4 {
+        margin-top: 25px;
+        margin-left: 35px;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .price-row {
+        box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 50px;
+
+        ion-col {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+             h3 {
+                 font-size: 18px;
+                 margin: 0 !important;
+                 padding: 0 !important;
+             }
+        }
+
+        :last-child {
+            justify-content: center;
+        }
+    }
+
+    .delivery-list {
+        box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #deposit-amount {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #total-amount {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .trialPeriod-list {
+        box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin-left: 20px;
+        margin-right: 20px;
+        ion-item:last-child {
+            border-top: 0.55px solid #c8c7cc !important;
+        }
+    }
+
+    #custom-date {
+        font-size: 14px !important;
+        padding-right: 5px;
+        display: flex;
+        
+    }
+    
+    ion-footer .button {
+        margin: 0 !important;
+    }
+
+    
+    
+
+    
+}
+

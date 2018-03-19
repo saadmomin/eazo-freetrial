@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="color-1">
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Transaction History</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    
+    <ion-card *ngFor="let product of transactionsArr">
+      <ion-row class="all-rows">
+        <ion-col col-9 id="product-name-heading">
+          <h4>{{product.productName}}</h4>
+        </ion-col>
+        <ion-col col-3 id="date">
+          <p>{{product.transactionDate}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="all-rows" id="second-row">
+        <ion-col col-3 class="secondary-title">
+          <p>Trial Deposit</p>
+        </ion-col>
+        <ion-col col-3>
+          <p>&#x20b9; {{product.trialDeposit}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="all-rows" id="third-row">
+        <ion-col col-3 class="secondary-title">
+          <p>Seller</p>
+        </ion-col>
+        <ion-col>
+          <p>{{product.sellerName}}</p>
+        </ion-col>
+        <ion-col  id="order-status-heading">
+          <h4>{{product.transitStatus}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  
+
+  </ion-list>
+</ion-content>
