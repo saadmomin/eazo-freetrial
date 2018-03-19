@@ -7,7 +7,7 @@
     </ion-buttons>
     <ion-title *ngIf="isFacebookLoggedIn == false">
       {{currentUser?.userdata.givenName}}'s Profile
-      
+
     </ion-title>
     <ion-title *ngIf="isFacebookLoggedIn == true">
       {{currentUser?.userdata.first_name}}'s Profile
@@ -15,10 +15,7 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
-
-  
   <ion-row class="profile-img">
     <ion-col>
       <img *ngIf="isFacebookLoggedIn" [src]="currentUser?.userdata.picture">
@@ -37,5 +34,5 @@
     <ion-col col-7>{{currentUser?.userdata.email}}</ion-col>
   </ion-row>
 
-  
+
 </ion-content>
