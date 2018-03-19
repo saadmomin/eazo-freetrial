@@ -28,11 +28,11 @@ export class MenuPage {
   ) {
 
    this.pages = [
-      { text: 'Home', Component: HomePage },
-      { text: 'Details Form', Component: 'DetailsFormPage' },
-      { text: 'Contact Us', Component: 'ContactPage' },
-      { text: 'History', Component: 'HistoryPage' },
-      { text: 'My Profile', Component: 'UserProfilePage'},
+      { text: 'Home', icon: 'home', Component: HomePage },
+      { text: 'Details Form', icon: 'information-circle', Component: 'DetailsFormPage' },
+      { text: 'Contact Us', icon: 'mail', Component: 'ContactPage' },
+      { text: 'History', icon: 'paper', Component: 'HistoryPage' },
+      { text: 'My Profile', icon: 'contact', Component: 'UserProfilePage'},
     ]
   }
 
@@ -65,8 +65,8 @@ export class MenuPage {
     let options = {
       message: 'Download the EAZO App!!',
       subject: 'Eazo Free Trial',
-      file: './assets/imgs/eazo-logo.png',
-      url: 'http://www.google.com'
+      file: 'https://www.getztechtechnologies.com/img/about/getz.png',
+      url: 'https://www.getztechtechnologies.com/'
     }
     this.socialSharing.shareWithOptions(options);
   }

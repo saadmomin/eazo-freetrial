@@ -9,9 +9,13 @@
   <ion-content>
     <div id="frost-div"></div>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.text}}</button>
-      <button menuClose ion-item (click)="shareviaWhatsApp()">Share</button>
-      <button menuClose ion-item (click)="logout()">Logout</button>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon"></ion-icon>
+         {{p.text}}</button>
+      <button menuClose ion-item (click)="shareviaWhatsApp()">
+        <ion-icon name="share-alt"></ion-icon> Share</button>
+      <button menuClose ion-item (click)="logout()">
+        <ion-icon name="log-out"></ion-icon> Logout</button>
     </ion-list>
   </ion-content>
   </ion-menu>
