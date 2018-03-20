@@ -58,7 +58,6 @@ export class MenuPage {
         })
       }
     })
-  
   }
 
   shareviaWhatsApp() {
