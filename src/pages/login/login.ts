@@ -123,7 +123,7 @@ export class LoginPage {
   }
 
   openSignUpPage() {
-    this.navCtrl.push('SignUpPage');
+    this.navCtrl.push('SignUpSelectPage');
   }
 
 

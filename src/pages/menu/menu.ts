@@ -17,6 +17,8 @@ export class MenuPage {
     
   rootPage: string;
   pages = [];
+  currentUser: any;
+  isFacebookLoggedIn: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
@@ -27,12 +29,28 @@ export class MenuPage {
     private socialSharing: SocialSharing
   ) {
 
+    this.storage.ready().then(() => {
+      this.storage.get('currentUser')
+        .then((data) => {
+          this.currentUser = data;
+          console.log(this.currentUser);
+          if(data.googleLoggedin == true) {
+            this.isFacebookLoggedIn = false;
+            console.log(this.isFacebookLoggedIn);
+          } else {
+            this.isFacebookLoggedIn = true;
+            console.log(this.isFacebookLoggedIn);
+          }
+        })
+    })
+
    this.pages = [
       { text: 'Home', icon: 'home', Component: HomePage },
       { text: 'Details Form', icon: 'information-circle', Component: 'DetailsFormPage' },
       { text: 'Contact Us', icon: 'mail', Component: 'ContactPage' },
       { text: 'History', icon: 'paper', Component: 'HistoryPage' },
       { text: 'My Profile', icon: 'contact', Component: 'UserProfilePage'},
+      { text: 'Terms and Conditions', icon: 'paper', Component: 'TermsPage'}
     ]
   }
 
@@ -43,7 +61,7 @@ export class MenuPage {
 
   logout() {
     this.storage.get('currentUser').then((data) => {
-      if(data.googleLoggedin == true) {
+      if(data.googleLoggedin) {
         this.google.logout()
           .then(() => {
             this.storage.remove('currentUser');
@@ -69,6 +87,8 @@ export class MenuPage {
     }
     this.socialSharing.shareWithOptions(options);
   }
+
+
 
   
 

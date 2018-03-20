@@ -1,0 +1,46 @@
+page-sign-up-select {
+    
+    #customer-card {
+        height: 45%;
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: #F38335;
+        ion-card-content {
+            color: white;
+            display: flex;
+            justify-content: center;
+            img {   
+                width: auto;
+                height: 180px;
+            }
+        }
+        ion-card-title {
+            text-align: center;
+            color: white;
+        }
+    }
+
+    #sprinter-card {
+        height: 45% !important;
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+        margin-top: 5px;
+        background-color: #F38335;
+        ion-card-content {
+            display: flex;
+            justify-content: center;
+            img {
+                width: auto;
+                height: 180px;
+            }
+        }
+        ion-card-title {
+            text-align: center;
+            color: white;
+        }
+
+    }
+}

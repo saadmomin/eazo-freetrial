@@ -6,43 +6,42 @@
 
 </ion-header>
 
+<ion-content class="no-scroll">
+  <ion-row class="login-card">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label>Full Name</ion-label>
+        <ion-input type="text" placeholder="Saad Momin"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Phone Number</ion-label>
+        <ion-input type="tel" placeholder="9821352219"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" placeholder="saadmomin@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" placeholder="***********"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Confirm Password</ion-label>
+        <ion-input type="password" placeholder="***********"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-item no-lines class="remember-terms">
+      <ion-label>Remember Me</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item no-lines class="remember-terms">
+      <ion-label>I agree to the
+        <span id="terms-text" (click)="openTermsPage()">Terms and Conditions</span>
+      </ion-label>
+      <ion-checkbox checked="true"></ion-checkbox>
+    </ion-item>
+    <button id="login-btn" ion-button color="color-1">Sign Up</button>
 
-<ion-content>
-
-    <ion-row class="login-card">
-    
-        <ion-list no-lines>
-            <ion-item>
-                <ion-label>Full Name</ion-label>
-                <ion-input type="text" placeholder="Saad Momin"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Phone Number</ion-label>
-                  <ion-input type="tel" placeholder="9821352219"></ion-input>
-                </ion-item>
-          <ion-item>
-            <ion-label>Email</ion-label>
-            <ion-input type="email" placeholder="saadmomin@hotmail.com"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Password</ion-label>
-            <ion-input type="password" placeholder="***********"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Confirm Password</ion-label>
-              <ion-input type="password" placeholder="***********"></ion-input>
-            </ion-item>
-        </ion-list>
-        <ion-item no-lines class="remember-terms">
-            <ion-label>Remember Me</ion-label>
-            <ion-checkbox checked="true"></ion-checkbox>
-        </ion-item>
-        <ion-item no-lines class="remember-terms">
-            <ion-label>I agree to the <span id="terms-text">Terms and Conditions</span></ion-label>
-            <ion-checkbox checked="true"></ion-checkbox>
-          </ion-item>
-        <button id="login-btn" ion-button color="color-1">Sign Up</button>
-        
-      </ion-row>
+  </ion-row>
 
 </ion-content>

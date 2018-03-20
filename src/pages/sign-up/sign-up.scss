@@ -1,4 +1,9 @@
 page-sign-up {
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+    
     .login-card {
         width: 100%;
         display: flex;
@@ -57,6 +62,9 @@ page-sign-up {
                     justify-content: flex-end;
                     align-items: center;
                     margin-left: 30px;
+                    button {
+                        width: 50% !important;
+                    }
                 }
                 .item-inner {
                     max-width: 250px !important;

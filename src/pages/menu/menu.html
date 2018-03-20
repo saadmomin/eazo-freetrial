@@ -1,23 +1,29 @@
 <ion-menu [content]="content">
-  <ion-header>
-    
-    <ion-toolbar color="color-1">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-content>
-    <div id="frost-div"></div>
+    <ion-card>
+      <ion-card-content id="profile-img">
+        <img *ngIf="isFacebookLoggedIn" [src]="currentUser?.userdata.picture">
+        <img *ngIf="!isFacebookLoggedIn" [src]="currentUser?.userdata.imageUrl">
+      </ion-card-content>
+      <ion-card-content id="name-heading">
+        <h4 col-7 *ngIf="isFacebookLoggedIn">{{currentUser?.userdata.username}}</h4>
+        <h4 col-7 *ngIf="!isFacebookLoggedIn">{{currentUser?.userdata.displayName}}</h4>
+      </ion-card-content>
+    </ion-card>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon [name]="p.icon"></ion-icon>
-         {{p.text}}</button>
+        {{p.text}}
+      </button>
       <button menuClose ion-item (click)="shareviaWhatsApp()">
-        <ion-icon name="share-alt"></ion-icon> Share</button>
+        <ion-icon name="share-alt"></ion-icon> Share
+      </button>
       <button menuClose ion-item (click)="logout()">
-        <ion-icon name="log-out"></ion-icon> Logout</button>
+        <ion-icon name="log-out"></ion-icon> Logout
+      </button>
+      
     </ion-list>
   </ion-content>
-  </ion-menu>
+</ion-menu>
 
-  <ion-nav #content [root]="pages[0].Component" swipeBackEnabled="false"></ion-nav>
+<ion-nav #content [root]="pages[0].Component" swipeBackEnabled="false"></ion-nav>
