@@ -1,46 +1,42 @@
 page-sign-up-select {
     
-    #customer-card {
-        height: 45%;
-        width: 90%;
-        padding: 10px;
-        margin: 0 auto;
-        margin-top: 10px;
-        background-color: #F38335;
-        ion-card-content {
-            color: white;
-            display: flex;
-            justify-content: center;
-            img {   
-                width: auto;
-                height: 180px;
-            }
+    ion-card {
+        position: relative;
+        text-align: center;
+        img {
+            background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+            z-index: 10;
+            
         }
-        ion-card-title {
-            text-align: center;
-            color: white;
-        }
-    }
+      }
 
-    #sprinter-card {
-        height: 45% !important;
-        width: 90%;
-        padding: 10px;
-        margin: 0 auto;
-        margin-top: 5px;
-        background-color: #F38335;
-        ion-card-content {
-            display: flex;
-            justify-content: center;
-            img {
-                width: auto;
-                height: 180px;
-            }
-        }
-        ion-card-title {
-            text-align: center;
-            color: white;
-        }
+      #overlay {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 99999;
+        background-color: rgba(0,0,0,0.5); /*dim the background*/
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 47%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+      .card-subtitle {
+          
+        font-size: 1.0em;
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        color: #fff;
+      }
+    
+    
 
-    }
+    
 }
