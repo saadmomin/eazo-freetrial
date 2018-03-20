@@ -1,37 +1,36 @@
 <ion-content class="no-scroll">
-<ion-row class="logo">
-  <ion-col>
-    <img src="./assets/imgs/eazo-logo.png" />
-  </ion-col>
-</ion-row>
-<ion-row class="login-card">
-  <h4>Login to EAZO App</h4>
-  <ion-list no-lines>
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="email" placeholder="saadmomin@hotmail.com"></ion-input>
-    </ion-item>
-    <ion-item>
+  <ion-row class="logo">
+    <ion-col>
+      <img src="./assets/imgs/eazo-logo.png" />
+    </ion-col>
+  </ion-row>
+  <ion-row class="login-card">
+    
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" placeholder="saadmomin@hotmail.com"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label>Password</ion-label>
         <ion-input type="password" placeholder="***********"></ion-input>
       </ion-item>
-  </ion-list>
-  <button id="login-btn" ion-button color="color-1">Login</button>
-</ion-row>
-<ion-row class="orWord">
-  <ion-col>
-      <h3>OR</h3>
-  </ion-col>
-</ion-row>
-<ion-row class="login-btns">
-     <button class="loginBtn loginBtn--facebook" ion-button (click)="loginwithFacebook()">
-        Login with Facebook
+    </ion-list>
+    <button id="login-btn" ion-button color="color-1">Login</button>
+    <ion-item id="sign-up-item">
+      <h4>Not a member yet?<span id="signup-link"(click)="openSignUpPage()">Sign Up</span></h4>
+    </ion-item>
+  </ion-row>
+
+  <ion-row class="login-btns">
+    <button class="loginBtn loginBtn--facebook" ion-button (click)="loginwithFacebook()">
+      Login with Facebook
     </button>
     <button class="loginBtn loginBtn--google" ion-button (click)="loginWithGoogle()">
-        Login with Google
+      Login with Google
     </button>
-</ion-row>
-<ion-row>
-  <ion-col></ion-col>
-</ion-row>
+  </ion-row>
+  <ion-row>
+    <ion-col></ion-col>
+  </ion-row>
 </ion-content>

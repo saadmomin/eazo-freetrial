@@ -122,6 +122,10 @@ export class LoginPage {
       })
   }
 
+  openSignUpPage() {
+    this.navCtrl.push('SignUpPage');
+  }
+
 
 
 }
