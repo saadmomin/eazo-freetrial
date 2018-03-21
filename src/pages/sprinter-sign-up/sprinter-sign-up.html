@@ -8,9 +8,10 @@
 
 
 <ion-content class="no-scroll">
-  <ion-row>
+  <ion-row class="profile-image-row">
     <ion-col>
-      
+      <button ion-fab mini (click)="openCamera()"><ion-icon name="add"></ion-icon></button>
+      <img [src]="profileImgSrc" >
     </ion-col>
   </ion-row>
   <ion-row class="login-card">

@@ -11,6 +11,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { IonicStorageModule } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     Facebook,
     GooglePlus,
     SocialSharing,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

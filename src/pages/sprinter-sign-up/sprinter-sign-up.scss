@@ -1,6 +1,26 @@
 page-sprinter-sign-up {
-    .no-scroll .scroll-content{
-        overflow: hidden;
+    // .no-scroll .scroll-content{
+    //     overflow: hidden;
+    // }
+
+    .profile-image-row {
+        margin-top: 5px;
+        ion-col {
+            display: flex;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        button {
+            position: absolute;
+            left: 210px;
+            top: 0px;
+            height: 26px !important;
+            width: 12px !important;
+        }
+        img {
+            width: 30%;
+            height: auto;
+        }
     }
     
     .login-card {
