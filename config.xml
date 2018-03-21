@@ -93,5 +93,5 @@
     </plugin>
     <plugin name="cordova-plugin-x-socialsharing" spec="~5.3.2" />
     <plugin name="cordova-plugin-camera" spec="~4.0.2" />
-    <engine name="ios" spec="~4.5.4" />
+    <engine name="ios" spec="4.5.4" />
 </widget>
