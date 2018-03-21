@@ -1,42 +1,59 @@
 page-sign-up-select {
+
+    .no-scroll .scroll-content{
+      overflow: hidden;
+    }
+
+    #choose-row {
+      display: flex;
+      justify-content: center;
+      
+      padding: 0 10px 0 20px;
+      h3 {
+        
+        font-size: 14px;
+      } 
+    }
     
     ion-card {
-        position: relative;
+      background-color: silver;
+      margin: 0 auto !important;
+      margin-top: 10px !important;
+      width: 85% !important;
+      height: 42% !important;
+      -webkit-box-shadow: none !important;
+      border: 1.2px solid #F38335 !important;
+      border-radius: 18px !important;
+      .subtitle {
+        display: flex;
+        align-items: flex-end;
         text-align: center;
-        img {
-            background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-            z-index: 10;
-            
+        margin-top: 20% !important;
+         h3 {
+           color: gray;
+         }
+      }
+      ion-row {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        justify-content: center;  
+      }
+      ion-card-title {
+        font-size: 30px !important;
+        color: #F38335 !important;
+        margin: 0 !important;
+      }
+    }
+    ion-card:active {
+      background-color: #F38335;
+      .subtitle {
+        h3 {
+          color: white !important;
         }
       }
-
-      #overlay {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        z-index: 99999;
-        background-color: rgba(0,0,0,0.5); /*dim the background*/
+      ion-card-title {
+        color: white !important;
       }
-    
-      .card-title {
-        position: absolute;
-        top: 47%;
-        font-size: 2.0em;
-        width: 100%;
-        font-weight: bold;
-        color: #fff;
-      }
-    
-      .card-subtitle {
-          
-        font-size: 1.0em;
-        position: absolute;
-        top: 40%;
-        width: 100%;
-        color: #fff;
-      }
-    
-    
-
-    
+    }
 }

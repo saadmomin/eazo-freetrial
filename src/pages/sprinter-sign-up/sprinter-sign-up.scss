@@ -1,3 +1,91 @@
 page-sprinter-sign-up {
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+    
+    .login-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+          h4 {
+            font-size: 17px !important;
+            margin-top: 20px;
+            padding-bottom: 20px;
+          }
+  
+          ion-list {
+            margin-top: 20px;
+            margin-bottom: 0px;
+          }
+  
+          ion-list ion-item {
+            padding-left: 5px !important;
+            margin-bottom: 20px;
+          }
+        }
 
+        ion-list ion-label {
+            font-size: 13px;
+            width: 120px !important;
+            align-self: flex-end !important;
+        }
+  
+        ion-input {
+            font-size: 14px;
+            border-bottom: 0.55px solid #c8c7cc !important;
+            .text-input::-webkit-input-placeholder {
+                text-indent: 0;
+                font-size: 14px;
+            }
+        }
+
+        #login-btn {
+            display: flex;
+            margin: 0 auto !important;
+            width: 220px !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-size: 17px;
+            margin-top: 20px !important;
+        }
+        
+        .remember-terms{
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ion-checkbox {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin-left: 30px;
+                    button {
+                        width: 50% !important;
+                    }
+                }
+                .item-inner {
+                    max-width: 250px !important;
+                    .input-wrapper {
+                        max-width: 250px !important;
+                        ion-label {
+                            max-width: 250px !important;
+                            
+                        }
+                    }
+                }
+
+            ion-label {
+                font-size: 13px;
+                width: 10px !important;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+
+        #terms-text {
+            margin-left: 4px;
+            text-decoration: underline;
+            color: #F38335;
+        }
 }
