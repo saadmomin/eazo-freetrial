@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-
+import { DomSanitizer } from '@angular/platform-browser';
+ 
 @IonicPage()
 @Component({
   selector: 'page-sprinter-sign-up',
@@ -9,31 +10,36 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class SprinterSignUpPage {
 
-  profileImgSrc = './assets/imgs/default-profile.png';
+  cameraImgPresent: boolean = false;
+  cameraprofileImg: string;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private domSanitizer: DomSanitizer) {
   }
 
   openCamera() {
     let options: CameraOptions = {
       quality: 100,
-      targetWidth: 900,
-      targetHeight: 600,
+      targetHeight: 500,
+      targetWidth: 500,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: false,
-      allowEdit: true,
-      sourceType: 1
+      cameraDirection: 1
     }
     this.camera.getPicture(options)
       .then(imageData => {
-        let base64 = 'data:/image/jpeg;base64,' + imageData;
-        console.log(base64);
+        this.cameraprofileImg = 'data:/image/jpeg;base64, ' + imageData;
+        this.cameraImgPresent = true;
+        console.log(this.cameraprofileImg);
+
       }, (error) => {
         console.log(error);
       })
+  }
+
+  openTermsPage() {
+    this.navCtrl.push('TermsPage');
   }
 
   

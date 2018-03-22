@@ -11,7 +11,12 @@
   <ion-row class="profile-image-row">
     <ion-col>
       <button ion-fab mini (click)="openCamera()"><ion-icon name="add"></ion-icon></button>
-      <img [src]="profileImgSrc" >
+      <div *ngIf="cameraImgPresent == false" class="img-container">
+        <img src="./assets/imgs/default-profile.png" >
+      </div>
+      <div *ngIf="cameraImgPresent == true" class="img-container">
+        <img [src]="domSanitizer.bypassSecurityTrustUrl(cameraprofileImg)" >
+      </div>
     </ion-col>
   </ion-row>
   <ion-row class="login-card">

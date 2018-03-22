@@ -9,6 +9,7 @@ page-sprinter-sign-up {
             display: flex;
             justify-content: center !important;
             align-items: center !important;
+            
         }
         button {
             position: absolute;
@@ -17,10 +18,22 @@ page-sprinter-sign-up {
             height: 26px !important;
             width: 12px !important;
         }
-        img {
-            width: 30%;
-            height: auto;
+        .img-container {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 50%;
+            img {
+                display: inline;
+                margin: 0 auto;
+                height: auto;
+                width: 100%;
+            }
         }
+        
     }
     
     .login-card {
