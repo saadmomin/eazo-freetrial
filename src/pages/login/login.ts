@@ -24,8 +24,6 @@ export class LoginPage {
     private storage: Storage) {
   }
 
-  
-
   loginwithFacebook() {
     let loading = this.loadingCtrl.create({
       content: 'Logging you in via Facebook'
@@ -36,25 +34,21 @@ export class LoginPage {
 
         this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', [])
           .then(profile => {
-            this.userData = { email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'], username: profile['name'] }
-            console.log('Facebook Login Successful!!');
-            this.storage.ready().then(() => {
-              this.storage.remove('currentUser');
-              this.storage.get('currentUser').then((data) => {
-                if(!data) {
-                  let storageData = {
-                    userdata: this.userData
-                  }
-                  this.storage.set('currentUser', storageData);
-                  
-                } else {
-                  return null;
-                }
-              })
+            this.userData = { 
+              email: profile['email'], 
+              first_name: profile['first_name'], 
+              picture: profile['picture_large']['data']['url'], 
+              username: profile['name'] 
+            }
+              
+              this.storage.set('facebookUser', this.userData);
+              this.storage.set('loginStatus', true);
+              console.log('Facebook Login Successful!!');
+              this.navCtrl.setRoot('MenuPage');
+              loading.dismiss();
             })
-            this.navCtrl.setRoot('MenuPage');
-            loading.dismiss();
-          })
+        
+        
       })
       .catch((error) => {
         let alert = this.alertCtrl.create({
@@ -83,23 +77,12 @@ export class LoginPage {
     loading.present();
     this.google.login({})
       .then((response) => {
-        this.userData = response;
+        
         this.storage.ready().then(() => {
-          this.storage.remove('currentUser');
-          this.storage.get('currentUser').then((data) => {
-            if(!data) {
-              let storageData = {
-                userdata: this.userData,
-                googleLoggedin: true
-              }
-              this.storage.set('currentUser', storageData);
-              
-            } else {
-              return null;
-            }
-          })
+          this.storage.set('googleUser', response);
+          this.storage.set('loginStatus', true);
         })
-        this.navCtrl.setRoot('MenuPage', { data: this.userData });
+        this.navCtrl.setRoot('MenuPage');
         loading.dismiss();
       })
       .catch((error) => {

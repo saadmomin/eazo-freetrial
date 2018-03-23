@@ -21,28 +21,38 @@ export class MyApp {
     private storage: Storage) {
 
     platform.ready().then(() => {
-
-      this.facebook.getLoginStatus()
-        .then(res => {
-          this.storage.get('currentUser')
-            .then((data) => {
-              console.log(data);
-              if (data) {
-                this.isLoggedIn = true;
-              } else {
-                this.isLoggedIn = false;
-              }
-              if (res.status == "connected" || this.isLoggedIn == true) {
-                this.rootPage = 'MenuPage';
-              } else {
+      this.storage.ready().then(() => {
+        this.storage.get('loginStatus')
+        .then((loginStatus) => {
+          if(loginStatus == true) {
+            this.rootPage = 'MenuPage';
+          } else {
+            this.rootPage = 'LoginPage';
+          }
+        })
+      })
+      
+      // this.facebook.getLoginStatus()
+      //   .then(res => {
+      //     this.storage.get('loginStatus')
+      //       .then((data) => {
+      //         console.log(data);
+      //         if (data) {
+      //           this.isLoggedIn = true;
+      //         } else {
+      //           this.isLoggedIn = false;
+      //         }
+      //         if (res.status == "connected" || this.isLoggedIn == true) {
+      //           this.rootPage = 'MenuPage';
+      //         } else {
                 
-                this.rootPage = 'LoginPage';
-              }
-            })
-        })
-        .catch(error => {
-          console.log(error);
-        })
+      //           this.rootPage = 'LoginPage';
+      //         }
+      //       })
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   })
 
 
       // Okay, so the platform is ready and our plugins are available.

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,14 @@ import { NavController, LoadingController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private loadingCtrl: LoadingController) {
-
+  constructor(public navCtrl: NavController, private loadingCtrl: LoadingController, private storage: Storage) {
+    this.storage.ready()
+      .then(() => {
+        this.storage.get('facebookUser')
+          .then((data) => {
+            console.log(data);
+          })
+      })
   }
 
   ionViewDidLoad() {

@@ -5,34 +5,27 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title *ngIf="isFacebookLoggedIn == false">
-      {{currentUser?.userdata.givenName}}'s Profile
-
-    </ion-title>
-    <ion-title *ngIf="isFacebookLoggedIn == true">
-      {{currentUser?.userdata.first_name}}'s Profile
-    </ion-title>
+    <ion-title>Loader Animation</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-row class="profile-img">
-    <ion-col>
-      <img *ngIf="isFacebookLoggedIn" [src]="currentUser?.userdata.picture">
-      <img *ngIf="!isFacebookLoggedIn" [src]="currentUser?.userdata.imageUrl">
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="details-row">
-    <ion-col col-4 offset-1>Name</ion-col>
-    <ion-col col-7 *ngIf="isFacebookLoggedIn">{{currentUser?.userdata.username}}</ion-col>
-    <ion-col col-7 *ngIf="!isFacebookLoggedIn">{{currentUser?.userdata.displayName}}</ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col col-4 offset-1>Email</ion-col>
-    <ion-col col-7>{{currentUser?.userdata.email}}</ion-col>
-  </ion-row>
-
+  <div class="spinner">
+    <div class="rect1">
+      <img id="loader-img" src="./assets/imgs/eazo-loader.png" />
+    </div>
+    <div class="rect2">
+      <img id="loader-img" src="./assets/imgs/eazo-loader.png" />
+    </div>
+    <div class="rect3">
+      <img id="loader-img" src="./assets/imgs/eazo-loader.png" />
+    </div>
+    <div class="rect4">
+      <img id="loader-img" src="./assets/imgs/eazo-loader.png" />
+    </div>
+    <div class="rect5">
+      <img id="loader-img" src="./assets/imgs/eazo-loader.png" />
+    </div>
+  </div>
 
 </ion-content>

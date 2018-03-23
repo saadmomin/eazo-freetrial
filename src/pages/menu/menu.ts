@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { Storage } from '@ionic/storage';
 import { Facebook } from '@ionic-native/facebook';
-import { GooglePlus} from '@ionic-native/google-plus';
+import { GooglePlus } from '@ionic-native/google-plus';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
@@ -14,14 +14,14 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class MenuPage {
 
   @ViewChild('content') childNavCtrl: NavController;
-    
+
   rootPage: string;
   pages = [];
-  currentUser: any;
-  isFacebookLoggedIn: boolean = false;
+  userProfilePic: string;
+  userFullName: string;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private storage: Storage,
     private facebook: Facebook,
@@ -30,28 +30,37 @@ export class MenuPage {
   ) {
 
     this.storage.ready().then(() => {
-      this.storage.get('currentUser')
-        .then((data) => {
-          this.currentUser = data;
-          console.log(this.currentUser);
-          if(data.googleLoggedin == true) {
-            this.isFacebookLoggedIn = false;
-            console.log(this.isFacebookLoggedIn);
-          } else {
-            this.isFacebookLoggedIn = true;
-            console.log(this.isFacebookLoggedIn);
-          }
+      this.storage.get('facebookUser').then((facebookUserData) => {
+        console.log(facebookUserData);
+        if(facebookUserData) {
+        console.log('Facebook User Present');
+        console.log(facebookUserData);
+        this.userProfilePic = facebookUserData.picture;
+        this.userFullName = facebookUserData.username;
+      } else {
+        this.storage.get('googleUser').then((googleUserData) => {
+          console.log('Google User Present');
+          console.log(googleUserData);
+          this.userProfilePic = googleUserData.imageUrl;
+          this.userFullName = googleUserData.displayName;
         })
-    })
+      }
+      })
+  })
 
-   this.pages = [
+    this.pages = [
       { text: 'Home', icon: 'home', Component: HomePage },
       { text: 'Details Form', icon: 'information-circle', Component: 'DetailsFormPage' },
       { text: 'Contact Us', icon: 'mail', Component: 'ContactPage' },
       { text: 'History', icon: 'paper', Component: 'HistoryPage' },
-      { text: 'My Profile', icon: 'contact', Component: 'UserProfilePage'},
-      { text: 'Terms and Conditions', icon: 'paper', Component: 'TermsPage'}
+      { text: 'My Profile', icon: 'contact', Component: 'UserProfilePage' },
+      { text: 'Terms and Conditions', icon: 'paper', Component: 'TermsPage' }
     ]
+
+  }
+
+  ngOnInit() {
+    
   }
 
   openPage(page) {
@@ -60,22 +69,28 @@ export class MenuPage {
   }
 
   logout() {
-    this.storage.get('currentUser').then((data) => {
-      if(data.googleLoggedin) {
-        this.google.logout()
-          .then(() => {
-            this.storage.remove('currentUser');
-            console.log('Google Logout!!');
-            this.navCtrl.setRoot('LoginPage');
-          })
-      } else {
-        this.facebook.logout().then(() => {
-          this.storage.remove('currentUser');
-          console.log('Facebook Logout!!');
-          this.navCtrl.setRoot('LoginPage');
-        })
-      }
-    })
+    console.log('Logout Successful')
+    this.storage.set('loginStatus', false)
+    this.storage.remove('facebookUser').then(() => {console.log('Facebook user deleted');});
+    this.storage.remove('googleUser').then(() => {console.log('Google user deleted');});
+    this.navCtrl.setRoot('LoginPage');
+
+    // this.storage.get('currentUser').then((data) => {
+    //   if(data.googleLoggedin) {
+    //     this.google.logout()
+    //       .then(() => {
+    //         this.storage.remove('currentUser');
+    //         console.log('Google Logout!!');
+    //         this.navCtrl.setRoot('LoginPage');
+    //       })
+    //   } else {
+    //     this.facebook.logout().then(() => {
+    //       this.storage.remove('currentUser');
+    //       console.log('Facebook Logout!!');
+    //       this.navCtrl.setRoot('LoginPage');
+    //     })
+    //   }
+    // })
   }
 
   shareviaWhatsApp() {
@@ -90,7 +105,7 @@ export class MenuPage {
 
 
 
-  
+
 
 
 

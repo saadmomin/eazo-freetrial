@@ -1,21 +1,96 @@
 page-user-profile {
-    .profile-img {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        ion-col {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+       .scroll-content {display: flex;
+       justify-content: center;
+       align-items: center;
+       }
+   ion-row {
+       
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       #loader-img {
+           width: 40%;
+           height: 40%;
+       }
+
+       #loader-bg {
+            width: 40%;
+            height: 40%;
+            position: absolute;
+            opacity: 0;
+            display: block;
+            animation: pulsate 3600ms ease-out infinite;
+       }
+
+       @keyframes pulsate {
+        0% {
+        transform: scale(0.1);
+        opacity: 0;
         }
-        img {
-            width: 50%;
-            height: auto;
-            border-radius: 50% !important;
-            border: 2px solid #F38335;
-            -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.27);
+        50% {
+        opacity: 1;
+        }
+        100% {
+        transform: scale(1.2);
+        opacity: 0;
         }
     }
-    .details-row {
-        margin-top: 20px;
+   }
+
+   .spinner {
+    margin: 100px auto;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+    
+  }
+  
+  .spinner > div {
+    background-color: transparent;
+    height: 100%;
+    width: 20px;
+    display: inline-block;
+    
+    
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+  .spinner .rect2 {
+    
+    animation-delay: 1.4s;
+  }
+  
+  .spinner .rect3 {
+    
+    animation-delay: 1.6s;
+  }
+  
+  .spinner .rect4 {
+    
+    animation-delay: 1.8s;
+  }
+  
+  .spinner .rect5 {
+    
+    animation-delay: 2.0s;
+  }
+  
+  @keyframes sk-stretchdelay {
+    0% { 
+        transform: scale(1);
+        -webkit-transform: scale(1);
     }
+    30% { 
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);  
+    }
+    
+    50%, 100% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+    }
+    
+  }
+
 }
