@@ -53,7 +53,7 @@ export class MenuPage {
       { text: 'Details Form', icon: 'information-circle', Component: 'DetailsFormPage' },
       { text: 'Contact Us', icon: 'mail', Component: 'ContactPage' },
       { text: 'History', icon: 'paper', Component: 'HistoryPage' },
-      { text: 'My Profile', icon: 'contact', Component: 'UserProfilePage' },
+      //{ text: 'My Profile', icon: 'contact', Component: 'UserProfilePage' },
       { text: 'Terms and Conditions', icon: 'paper', Component: 'TermsPage' }
     ]
 
