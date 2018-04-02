@@ -101,7 +101,7 @@ export class LoginPage {
 
         alert.present();
         loading.dismiss();
-        console.log(error);
+        console.log('Error message' + error);
       })
   }
 
